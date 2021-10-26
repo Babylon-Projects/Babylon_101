@@ -1,4 +1,4 @@
-# b101
+# Babylon 101
 
 ## Project setup
 ```
