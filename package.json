@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babylonjs/core": "^4.2.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
