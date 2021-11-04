@@ -1,4 +1,4 @@
-# b101
+# BabylonJS 101
 
 ## Project setup
 ```
