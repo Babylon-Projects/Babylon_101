@@ -34,7 +34,7 @@ export class StandardMaterials {
       this.scene
     );
 
-    hemiLight.intensity = 1;
+    hemiLight.intensity = 0.75;
 
     const ground = MeshBuilder.CreateGround(
       "ground",
@@ -70,6 +70,8 @@ export class StandardMaterials {
     );
 
     groundMat.bumpTexture = normalTex;
+    groundMat.invertNormalMapX = true;
+    groundMat.invertNormalMapY = true;
     texArray.push(normalTex);
 
     const aoTex = new Texture("./textures/stone/stone_ao.jpg", this.scene);
@@ -116,7 +118,7 @@ export class StandardMaterials {
 
     const specTex = new Texture("./textures/metal/metal_spec.jpg", this.scene);
     ballMat.specularTexture = specTex;
-    ballMat.specularPower = 1;
+    ballMat.specularPower = 10;
     texArray.push(specTex);
 
     texArray.forEach((tex) => {
