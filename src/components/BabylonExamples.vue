@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>Babylon Examples</h1>
+<h1>PBR Materials</h1>
 <canvas></canvas>
 </div>
 
@@ -8,13 +8,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import {StandardMaterials} from "@/BabylonExamples/StandardMaterials";
+import {PBR} from "@/BabylonExamples/PBR"
 
 export default defineComponent({
   name: 'BabylonExamples',
   mounted(){
     const canvas = document.querySelector("canvas")!;
-    new StandardMaterials(canvas);
+    new PBR(canvas);
   }
   
 });
