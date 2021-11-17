@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>PBR Materials</h1>
+<p>Custom Models</p>
 <canvas></canvas>
 </div>
 
@@ -8,13 +8,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import {PBR} from "@/BabylonExamples/PBR"
+import {CustomModels} from "@/BabylonExamples/CustomModels"
 
 export default defineComponent({
   name: 'BabylonExamples',
   mounted(){
     const canvas = document.querySelector("canvas")!;
-    new PBR(canvas);
+    new CustomModels(canvas);
   }
   
 });
@@ -22,6 +22,7 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@100;700&display=swap');
 
 div {
   width:70%;
@@ -33,10 +34,13 @@ div {
   background:none;
 }
 
-h1 {
+p {
   color:white;
   background:none;
   margin-bottom:1rem;
+ font-family: 'Roboto Condensed';
+  font-weight: 400;
+  font-size:2rem;
 }
 
 canvas {
