@@ -1,39 +1,38 @@
 <template>
-<div id="app">
-  <BabylonExamples />
+  <div id="app">
+    <BabylonExamples />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import BabylonExamples from './components/BabylonExamples.vue';
+import { defineComponent } from "vue";
+import BabylonExamples from "./components/BabylonExamples.vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    BabylonExamples
-  }
+    BabylonExamples,
+  },
 });
 </script>
 
 <style>
 * {
-  padding:0;
-  margin:0;
-  background-image: url("../public/images/Background_Dots.png");   
-  background-size: cover;
-  background-position:center;
+  padding: 0;
+  margin: 0;
 }
 
 #app {
-  width:100%;
-  height:100%; 
-  display:flex;
-  justify-content: center;
-  align-items: center; 
-  margin-top:4rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("../public/images/Background_Dots.png");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  padding: 2rem;
 }
-
-
-
 </style>
