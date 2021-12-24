@@ -1,54 +1,20 @@
 <template>
   <main>
-    <!-- <LoadingScreen :isLoaded="loaded" /> -->
-
-    <div id="loader">
-      <p>Loading</p>
-
-      <div id="loadingContainer">
-        <div id="loadingBar"></div>
-      </div>
-
-      <p id="percentLoaded">25%</p>
-    </div>
-
-    <p>Custom Loading Screen</p>
+    <p>Mesh Actions</p>
     <canvas></canvas>
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { CustomLoading } from "@/BabylonExamples/CustomLoading";
-// import LoadingScreen from "./LoadingScreen.vue";
+import { MeshActions } from "@/BabylonExamples/MeshActions";
 
 export default defineComponent({
   name: "BabylonExamples",
-  // components: { LoadingScreen },
-  data() {
-    return {
-      loaded: false,
-    };
-  },
+
   mounted() {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement;
-    const loadingBar = document.getElementById("loadingBar") as HTMLElement;
-    const percentLoaded = document.getElementById(
-      "percentLoaded"
-    ) as HTMLElement;
-    const loader = document.getElementById("loader") as HTMLElement;
-    new CustomLoading(
-      canvas,
-      this.setLoaded,
-      loadingBar,
-      percentLoaded,
-      loader
-    );
-  },
-  methods: {
-    setLoaded() {
-      this.loaded = true;
-    },
+    new MeshActions(canvas);
   },
 });
 </script>
