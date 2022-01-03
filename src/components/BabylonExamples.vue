@@ -7,14 +7,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { FirstPersonController } from "@/BabylonExamples/FirstPersonController";
+import { PhysicsImpostors } from "@/BabylonExamples/PhysicsImpostors";
 
 export default defineComponent({
   name: "BabylonExamples",
 
   mounted() {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement;
-    new FirstPersonController(canvas);
+    new PhysicsImpostors(canvas);
   },
 });
 </script>
