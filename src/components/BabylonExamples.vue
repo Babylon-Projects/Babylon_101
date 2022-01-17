@@ -1,20 +1,20 @@
 <template>
   <main>
-    <p>Collisions and Triggers</p>
+    <p>Physics Velocity</p>
     <canvas></canvas>
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { CollisionsTriggers } from "@/BabylonExamples/CollisionsTriggers";
+import { PhysicsForces } from "@/BabylonExamples/PhysicsForces";
 
 export default defineComponent({
   name: "BabylonExamples",
 
   mounted() {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement;
-    new CollisionsTriggers(canvas);
+    new PhysicsForces(canvas);
   },
 });
 </script>

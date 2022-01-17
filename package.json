@@ -10,6 +10,7 @@
   "dependencies": {
     "@babylonjs/core": "^4.2.0",
     "@babylonjs/loaders": "^4.2.0",
+    "ammojs-typed": "^1.0.6",
     "vue": "^3.0.0"
   },
   "devDependencies": {
