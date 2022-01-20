@@ -1,6 +1,6 @@
 <template>
   <main>
-    <p>Physics Velocity</p>
+    <p>Physics Forces</p>
     <canvas></canvas>
   </main>
 </template>
