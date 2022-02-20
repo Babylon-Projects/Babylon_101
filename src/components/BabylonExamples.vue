@@ -1,20 +1,20 @@
 <template>
   <main>
-    <p>Animations</p>
+    <p>Character Animations</p>
     <canvas></canvas>
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Animations } from "@/BabylonExamples/Animations";
+import { CharacterAnimations } from "@/BabylonExamples/CharacterAnimations";
 
 export default defineComponent({
   name: "BabylonExamples",
 
   mounted() {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement;
-    new Animations(canvas);
+    new CharacterAnimations(canvas);
   },
 });
 </script>
