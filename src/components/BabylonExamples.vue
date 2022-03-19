@@ -1,20 +1,20 @@
 <template>
   <main>
-    <p>Animation Blending</p>
+    <p>Audio Example</p>
     <canvas></canvas>
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { AnimBlending } from "@/BabylonExamples/AnimBlending";
+import { AudioExample } from "@/BabylonExamples/AudioExample";
 
 export default defineComponent({
   name: "BabylonExamples",
 
   mounted() {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement;
-    new AnimBlending(canvas);
+    new AudioExample(canvas);
   },
 });
 </script>

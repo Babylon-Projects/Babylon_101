@@ -14,13 +14,11 @@ export class AnimBlending {
   scene: Scene;
   engine: Engine;
 
-
   constructor(private canvas: HTMLCanvasElement) {
     this.engine = new Engine(this.canvas, true);
     this.scene = this.CreateScene();
     this.CreateEnvironment();
     this.CreateCharacter();
-  
 
     this.engine.runRenderLoop(() => {
       this.scene.render();
@@ -62,53 +60,38 @@ export class AnimBlending {
     );
 
     meshes[0].rotate(Vector3.Up(), -Math.PI);
-  
 
     const idle = animationGroups[0];
     const run = animationGroups[1];
-    
 
-this.scene.onPointerDown = evt => {
+    this.scene.onPointerDown = (evt) => {
+      if (evt.button === 1)
+        this.scene.onBeforeRenderObservable.runCoroutineAsync(
+          this.animationBlending(run, idle)
+        );
 
-  if(evt.button === 1)
-    this.scene.onBeforeRenderObservable.runCoroutineAsync(this.animationBlending(run, idle))
-
-    if(evt.button === 0)
-    this.scene.onBeforeRenderObservable.runCoroutineAsync(this.animationBlending(idle, run))
-
-}
-
-       
+      if (evt.button === 0)
+        this.scene.onBeforeRenderObservable.runCoroutineAsync(
+          this.animationBlending(idle, run)
+        );
+    };
   }
 
-  *animationBlending(toAnim: AnimationGroup, fromAnim: AnimationGroup): Iterable{
-      let currentWeight = 1;
-      let newWeight = 0;
+  *animationBlending(
+    toAnim: AnimationGroup,
+    fromAnim: AnimationGroup
+  ): AsyncCoroutine<void> {
+    let currentWeight = 1;
+    let newWeight = 0;
 
-      toAnim.play(true);
+    toAnim.play(true);
 
-      while(newWeight< 1){
-          newWeight +=0.01;
-          currentWeight -= 0.01;
-          toAnim.setWeightForAllAnimatables(newWeight);
-          fromAnim.setWeightForAllAnimatables(currentWeight);
-          yield;
-        
-      }
-
-
+    while (newWeight < 1) {
+      newWeight += 0.01;
+      currentWeight -= 0.01;
+      toAnim.setWeightForAllAnimatables(newWeight);
+      fromAnim.setWeightForAllAnimatables(currentWeight);
+      yield;
+    }
   }
-
-
-
- 
-
-
- 
-
-  
-
-
-
-
 }
